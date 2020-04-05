@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'app_bottom_bar.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -82,6 +84,7 @@ class MyHomePage extends StatelessWidget {
           )
         ],
       ),
+      bottomNavigationBar: AppBottomBar(),
     );
   }
 }
