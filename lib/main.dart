@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_restimate_ui/buying.dart';
 
 import 'app_bottom_bar.dart';
 
@@ -56,25 +57,35 @@ class MyHomePage extends StatelessWidget {
                 mainAxisSpacing: 8,
                 children: mycard
                     .map(
-                      (e) => Card(
-                        color: e.isActive ? Colors.deepPurple : null,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Icon(
-                              e.icon,
-                              size: 50,
-                              color:
-                                  e.isActive ? Colors.white : Colors.deepPurple,
-                            ),
-                            SizedBox(height: 10),
-                            Text(
-                              e.title,
-                              style: TextStyle(
-                                  color:
-                                      e.isActive ? Colors.white : Colors.grey),
-                            ),
-                          ],
+                      (e) => InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (_) => Buying()),
+                          );
+                        },
+                        child: Card(
+                          color: e.isActive ? Colors.deepPurple : null,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Icon(
+                                e.icon,
+                                size: 50,
+                                color: e.isActive
+                                    ? Colors.white
+                                    : Colors.deepPurple,
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                e.title,
+                                style: TextStyle(
+                                    color: e.isActive
+                                        ? Colors.white
+                                        : Colors.grey),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     )
